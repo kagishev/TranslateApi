@@ -1,11 +1,11 @@
 # Translate API
-  Web-based language translation API that localizes strings and saves/update translations in the database.
+  Web-based language translation API that localizes strings and saves/updates translations in the database.
 ###
    ![alt text](https://raw.githubusercontent.com/kagishev/TranslateApi/master/TranslateAPI.png)
 ## Features
-  This is an API based on Amazon Lambda, API Gateway and DynamoDB. No Inslallation requered. Support for both GET abd PUT HTTP methods. 
+  This is an API based on Amazon Lambda, API Gateway and DynamoDB. No installation is required. Support for both GET abd PUT HTTP methods. 
 ## Usage
-  Command line access to reireive translation:
+  Command line access to retreive translation:
   ```
   curl https://o2tkiwaqui.execute-api.us-east-1.amazonaws.com/default/TranslateApi/{source_string}-X GET
   ```
@@ -29,3 +29,37 @@
 
 Access to the API is also available via user-friendly iterface:
 https://s3.amazonaws.com/translateapi/TranslateAPI.html
+
+Initial set of translations:
+```
+USA
+США
+ 
+croatia
+хорватия
+ 
+england
+англия
+ 
+france
+франция
+ 
+germany
+германия
+ 
+italy
+италия
+ 
+mexico
+мексика
+ 
+russia
+россия
+ 
+test
+тест
+ 
+ukraine
+украина
+
+```

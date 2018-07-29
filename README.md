@@ -26,5 +26,5 @@
 {}
   ```
 
-Access to the API is also available via friendly user iterface:
+Access to the API is also available via user-friendly iterface:
 https://s3.amazonaws.com/translateapi/TranslateAPI.html

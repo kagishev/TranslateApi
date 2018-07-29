@@ -3,7 +3,36 @@
 ###
    ![alt text](https://raw.githubusercontent.com/kagishev/TranslateApi/master/TranslateAPI.png)
 ## Features
-  This is an API based on Amazon Lambda, API Gateway and DynamoDB. No installation is required. Support for both GET abd PUT HTTP methods. 
+  This is an API based on Amazon Lambda, API Gateway and DynamoDB. No installation is required. Support for both GET abd PUT HTTP methods.
+  
+  #### AWS Intergation Request Mapping Template for GET Method:
+  ```json
+  {
+    "TableName": "TranslationMemory2",
+    "Key": {
+      "source": {
+        "S": "$input.params('source')"
+      }
+    },
+    "querystring": "$input.params('source').querystring"
+  }
+  ```
+  #### AWS Intergation Request Mapping Template for PUT Method:
+  ```json
+  {
+      "TableName" : "TranslationMemory2",
+      "Item" : {
+          "source": {
+              "S" : "$input.params('source')"
+          },
+          "target" : {
+              "S" : "$input.path('$.target')"
+          }
+      },
+      "querystring": "$input.params('source').querystring"
+  }
+  ```
+
 ## Usage
   Command line access to retreive translation:
   ```ruby
@@ -30,7 +59,7 @@
 Access to the API is also available via user-friendly iterface:
 https://s3.amazonaws.com/translateapi/TranslateAPI.html
 
-### Initial set of translations:
+### Initial set of translations (Russian as an example):
 ```
 Croatia
 Хорватия

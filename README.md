@@ -6,7 +6,7 @@
   This is an API based on Amazon Lambda, API Gateway and DynamoDB. No installation is required. Support for both GET abd PUT HTTP methods. 
 ## Usage
   Command line access to retreive translation:
-  ```bash
+  ```ruby
   curl https://o2tkiwaqui.execute-api.us-east-1.amazonaws.com/default/TranslateApi/{source_string}-X GET
   ```
   Where {source_string} is any English string, for example:

@@ -1,5 +1,6 @@
 # Translate API
   Web-based language translation API and that localizes strings and saves/update translations in the database.
+###
    ![alt text](https://raw.githubusercontent.com/kagishev/TranslateApi/master/TranslateAPI.png)
 ## Features
   This is an API based on Amazon Lambda, API Gateway and DynamoDB. No Inslallation requered. Support for both GET abd PUT HTTP methods. 

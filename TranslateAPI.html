@@ -1,0 +1,112 @@
+<html>
+
+<head>
+     <meta charset="UTF-8"> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <style type="text/css">
+        body {
+            text-align: center;
+            font-size: 1rem;
+            font-weight: 800;
+            line-height: 1.5714285714285714;
+            margin: 2rem;
+        }
+        form {
+            display: inline-block;
+        }
+        label {
+            text-align: left;
+            position: relative;
+            display: grid;
+        }
+        input[value="Submit"] {
+            text-align: left;
+            position: relative;
+            display: grid;
+            padding: 0.2625rem 0.7625rem;
+            min-width: 60px;
+            background-color: #ffd16d;
+            border-color: #ffd16d;
+            font-size: 0.575rem;
+            font-weight: 800;
+            line-height: 1.5714285714285714;
+            border-width: 0.125rem;
+            border-radius: 0.3125rem;
+            outline: none;
+            border-style: solid;
+            cursor: pointer;
+            margin-top: 0.5em;
+        }
+        #translation, #submitted {
+            color: green;
+            font-size: 0.9rem;
+            margin: 0.5rem;
+        }
+
+    </style>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#submit').click(  function () {
+                var Source = $('#source').val()
+                var sendData = "{\"" + "target" + "\":" + "\"" + $('#target').val() + "\"}";
+
+                $.ajax({
+                    url: 'https://o2tkiwaqui.execute-api.us-east-1.amazonaws.com/default/TranslateApi/' + Source,    // api url
+                    type: 'PUT',
+                    dataType: "json",
+                    contentType: 'application/json; charset=utf-8',
+                    crossDomain: true,
+                    jsonpCallback: 'callback',
+                    data: sendData,
+                    success: function () {
+                            $('#submitted').html("Translation inserted")
+                    }
+                });
+
+            });
+
+            $('#translate').click(  function () {
+                var GetSource = $('#getSource').val()
+                var Translation = $('#translation')
+
+                $.ajax({
+                    url: 'https://o2tkiwaqui.execute-api.us-east-1.amazonaws.com/default/TranslateApi/' + GetSource,    // api url
+                    type: 'GET',
+                    dataType: "json",
+                    contentType: 'application/json; charset=utf-8',
+                    crossDomain: true,
+                    jsonpCallback: 'callback',
+                    success:function(data) {
+                        if(data.source) {    
+                            $('#translation').html("Translation: " + data.target);
+                        } else { 
+                            $('#translation').html("Translation: not found in the database"); 
+                        }
+                    }
+
+                });
+            //return Target;
+            });
+        });
+    </script>
+</head>
+<body>
+<h1>HTML page for Translate API</h1>
+<div>Insert source and target pair to the database and receive translation back for particular source. </div>
+<form>
+    <br/>
+    <label>Source:</label>
+    <input id="source" type="text" name="data" value="" placeholder="source"><br/>
+    <label>Target:</label>
+    <input id="target" type="text" name="data" value="" placeholder="target"><br/>
+    <input id="submit" type="button"  value="Submit">
+    <div id="submitted"></div>
+    <br/>
+    <label>Get translation:</label>
+    <input id="getSource" type="text" name="data" value="" placeholder="source"><br/>
+    <input id="translate" type="button"  value="Submit">
+</form>
+    <div id="translation">Translation:</div>
+</body>
+</html>

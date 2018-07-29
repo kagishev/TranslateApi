@@ -1,0 +1,15 @@
+{
+  "name": "TranslateAPI",
+  "version": "0.0.1",
+  "description": "Translate API",
+  "author": "kirill agishev <kirill_agishev@yahoo.com>",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "chai": "*",
+    "mocha": "*"
+  },
+  "scripts": {
+    "zip": "zip -r ../TranslateAPI.zip *"
+  }
+}

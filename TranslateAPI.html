@@ -60,10 +60,10 @@
                     jsonpCallback: 'callback',
                     data: sendData,
                     success: function () {
-                            $('#submitted').html("Translation inserted")
+                                $('#submitted').html("Translation inserted");
                     }
                 });
-
+                $('#submitted').empty();
             });
 
             $('#translate').click(  function () {
@@ -86,7 +86,7 @@
                     }
 
                 });
-            //return Target;
+                $('#translation').empty();
             });
         });
     </script>

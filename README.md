@@ -1,1 +1,3 @@
 # Translate API
+## Features
+## Usage

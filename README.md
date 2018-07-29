@@ -1,5 +1,5 @@
 # Translate API
-  Web-based language translation API and that localizes strings and saves/update translations in the database.
+  Web-based language translation API that localizes strings and saves/update translations in the database.
 ###
    ![alt text](https://raw.githubusercontent.com/kagishev/TranslateApi/master/TranslateAPI.png)
 ## Features

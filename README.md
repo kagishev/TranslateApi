@@ -52,8 +52,11 @@
   ```
   Where {source_string} and {target_string} is desired translation set:
   ```ruby
-  curl -H 'Content-Type: application/json' -X PUT -d '{"target":"франция"}' https://o2tkiwaqui.execute-api.us-east-1.amazonaws.com/default/TranslateApi/france && echo
-{}
+  curl -H 'Content-Type: application/json' -X PUT -d '{"target":"франция"}' https://o2tkiwaqui.execute-api.us-east-1.amazonaws.com/default/TranslateApi/france
+  {
+    "response" : "database successfully updated."
+  }
+
   ```
 
 Access to the API is also available via user-friendly iterface:

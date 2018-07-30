@@ -1,0 +1,27 @@
+  #### AWS Intergation Request Mapping Template for GET Method:
+  ```json
+  {
+    "TableName": "TranslationMemory2",
+    "Key": {
+      "source": {
+        "S": "$input.params('source')"
+      }
+    },
+    "querystring": "$input.params('source').querystring"
+  }
+  ```
+  #### AWS Intergation Request Mapping Template for PUT Method:
+  ```json
+  {
+      "TableName" : "TranslationMemory2",
+      "Item" : {
+          "source": {
+              "S" : "$input.params('source')"
+          },
+          "target" : {
+              "S" : "$input.path('$.target')"
+          }
+      },
+      "querystring": "$input.params('source').querystring"
+  }
+  ```

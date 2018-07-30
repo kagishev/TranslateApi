@@ -58,10 +58,24 @@
   }
 
   ```
-
-Access to the API is also available via user-friendly iterface:
+### Web access:
+API access is also available via user-friendly iterface:
 https://s3.amazonaws.com/translateapi/TranslateAPI.html
 
+### Shell wrapper
+API is accessible via bash script as well: 
+#### Usage
+```
+/bin/bash TranslateAPI.bash
+
+ TranslateAPI.bash - Shell wrapper for TranslateAPI.
+ Usage:
+  TranslateAPI.bash --source <source_string>  :: get translation.
+  TranslateAPI.bash --source <source_string> --target <target_string> :: insert/update translation.
+ 
+    <source_string>   ::   Source string
+    <target_string>>  ::   Target string
+```
 ### Initial set of translations (Russian as an example):
 ```
 Croatia

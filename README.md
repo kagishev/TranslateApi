@@ -64,7 +64,7 @@ https://s3.amazonaws.com/translateapi/TranslateAPI.html
 
 ### Shell wrapper
 API is accessible via bash script as well: 
-#### Usage
+#### Usage:
 ```
 /bin/bash TranslateAPI.bash
 
@@ -75,6 +75,16 @@ API is accessible via bash script as well:
  
     <source_string>   ::   Source string
     <target_string>>  ::   Target string
+```
+#### Examples:
+```
+/bin/bash TranslateAPI.bash --source France
+Translation:  "Франция"
+
+/bin/bash TranslateAPI.bash --source France --target Франция
+{
+    "response":"database successfully updated."
+}
 ```
 ### Initial set of translations (Russian as an example):
 ```

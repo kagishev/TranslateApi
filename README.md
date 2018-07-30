@@ -3,35 +3,7 @@
 ###
    ![alt text](https://raw.githubusercontent.com/kagishev/TranslateApi/master/TranslateAPI.png)
 ## Features
-  This is an API based on Amazon Lambda, API Gateway and DynamoDB. No installation is required. Support for both GET abd PUT HTTP methods.
-  
-  #### AWS Intergation Request Mapping Template for GET Method:
-  ```json
-  {
-    "TableName": "TranslationMemory2",
-    "Key": {
-      "source": {
-        "S": "$input.params('source')"
-      }
-    },
-    "querystring": "$input.params('source').querystring"
-  }
-  ```
-  #### AWS Intergation Request Mapping Template for PUT Method:
-  ```json
-  {
-      "TableName" : "TranslationMemory2",
-      "Item" : {
-          "source": {
-              "S" : "$input.params('source')"
-          },
-          "target" : {
-              "S" : "$input.path('$.target')"
-          }
-      },
-      "querystring": "$input.params('source').querystring"
-  }
-  ```
+  This is an API based on Amazon Lambda, API Gateway and DynamoDB. No installation is required. Support for both GET and PUT HTTP methods.
 
 ## Usage
   Command line access to retreive translation:
@@ -46,7 +18,7 @@
   "target": "франция"
 }
   ```
-  Command line access to update the database with translations:
+  Command line access to update the database with translation:
   ```ruby
   curl -H 'Content-Type: application/json' -X PUT -d '{"target":"{target_string}"}' https://o2tkiwaqui.execute-api.us-east-1.amazonaws.com/default/TranslateApi/{source_string} && echo
   ```
@@ -83,7 +55,7 @@ Translation:  "Франция"
 
 /bin/bash TranslateAPI.bash --source France --target Франция
 {
-    "response":"database successfully updated."
+    "response" : "database successfully updated."
 }
 ```
 ### Initial set of translations (Russian as an example):
